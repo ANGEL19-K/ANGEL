@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Felicidades Gustavo</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+        @import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+
+        body {
+            font-family: 'Indie Flower', cursive !important;
+            background: #FDE3A7; 
+            margin: 0px;
+            padding: 0px;
+            overflow: hidden; 
+        }
+
+        ::selection {
+            background: transparent;
+        }
+
+        h4 {
+            font-size: 26px;
+            line-height: 1px;
+            font-family: 'Amatic SC', cursive !important;
+        }
+
+        .color1 {
+            color: #222222; 
+        }
+
+        .color2 {
+            color: #C0392B; 
+        }
+
+        .card {
+            color: #013243; 
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            height: 400px;
+            background: #e0e1dc;
+            transform-style: preserve-3d;
+            transform: translate(-50%, -50%) perspective(2000px);
+            box-shadow: inset 300px 0 50px rgba(0, 0, 0, .5), 20px 0 60px rgba(0, 0, 0, .5);
+            transition: 1s;
+        }
+
+        .card:hover {
+            transform: translate(-50%, -50%) perspective(2000px) rotate(15deg) scale(1.2);
+            box-shadow: inset 20px 0 50px rgba(0, 0, 0, .5), 0 10px 100px rgba(0, 0, 0, .5);
+        }
+
+        .card:before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: #BAC1BA;
+            transform-origin: bottom;
+            transform: skewX(-45deg);
+        }
+
+        .card:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -5px;
+            width: 5px;
+            height: 100%;
+            background: #92A29C;
+            transform-origin: left;
+            transform: skewY(-45deg);
+        }
+
+        .card .imgBox {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-origin: left;
+            transition: .7s;
+        }
+
+        .card .bark {
+            position: absolute;
+            background: #e0e1dc;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: .7s;
+        }
+
+        .card .imgBox img {
+            min-width: 250px;
+            max-height: 400px;
+        }
+
+        .card:hover .imgBox {
+            transform: rotateY(-135deg);
+        }
+
+        .card:hover .bark {
+            opacity: 1;
+            transition: .6s;
+            box-shadow: 300px 200px 100px rgba(0, 0, 0, .4) inset;
+        }
+
+        .card .details {
+            position: absolute;
+            top: 0;
+            left: 0;
+            box-sizing: border-box;
+            padding: 0 0 0 10px;
+            z-index: -1;
+            margin-top: 70px;
+        }
+
+        .card .details p {
+            font-size: 15px;
+            line-height: 5px;
+            transform: rotate(-10deg);
+            padding: 0 0 0 80px;
+        }
+
+        .card .details h4 {
+            text-align: center;
+        }
+
+        .text-right {
+            text-align: right;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .videos {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .videos a {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 18px;
+            color: #013243; /*SHERPA BLUE*/
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .videos a:hover {
+            color: #C0392B; /*TALL POPPY*/
+        }
+    </style>
+</head>
+<body>
+    <div id="page1" class="card">
+        <div class="imgBox">
+            <div class="bark"></div>
+            <img src="img/gato.jpeg">
+        </div>
+        <div class="details">
+            <h4 class="color1">Felicidades Arrrozconpollo🍙🍗 🥳</h4>
+            <h4 class="color2 margin">Feliz cumpleaños</h4><br>
+            <p><b>Querida Stheysy, alias Arrozconpollo,</p>
+            <p>Espero que pases un día maravilloso y lleno </p> 
+            <p>de alegría en tu cumpleaños.</p>
+            <p> Quiero felicitarte de corazón por tus 26 años, </p><p> aunque, como dices, aun eres de 20 añitos</p>
+            <br>
+            <p class="text-right">¡Muchas felicidades!</p>
+            <p class="text-right">Tu amigo: Angel (El mas fiel)</p>
+            <button onclick="showNextPage()">Siguiente</button>
+        </div>
+    </div>
+
+    <div id="page2" class="card hidden">
+        <div class="imgBox">
+            <div class="bark"></div>
+            <img src="img/gato2.jpeg">
+        </div>
+        <div class="details">
+            <h4 class="color1">Jugadas de la carry Arrozconpollo</h4>
+            <div class="videos">
+                <a href="https://www.tiktok.com/@gatogod07/video/7375633815261187333">Tank en su Prime</a>
+                <a href="https://www.tiktok.com/@gatogod07/video/7361855179907501318">Ariete de charger</a>
+                <a href="https://www.tiktok.com/@gatogod07/video/7354853616127151366">Instakill con el charger</a>
+                <a href="https://www.tiktok.com/@gatogod07/video/7377121304794713350">Primera roca con el tank</a>
+            </div>
+            <br>
+            
+            <button onclick="document.getElementById('page2').classList.add('hidden'); document.getElementById('page1').classList.remove('hidden');">Volver</button>
+        </div>
+    </div>
+
+    <script>
+        function showNextPage() {
+            document.getElementById('page1').classList.add('hidden');
+            document.getElementById('page2').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
